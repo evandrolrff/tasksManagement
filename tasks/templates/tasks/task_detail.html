@@ -1,0 +1,12 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Title: {{ task.title }}</h2>
+        <p>Assignee: {{ task.assignee }}</p>
+        <p>Type: {{ task.type }}</p>
+        <p>Status: {{ task.status }}</p>
+        <p>Time spent: {{ task.time_spent }}</p>
+        <p>Description: {{ task.description|linebreaksbr }}</p>
+    </div>
+{% endblock %}

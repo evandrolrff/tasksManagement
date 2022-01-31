@@ -6,12 +6,9 @@
 
     {% for task in tasks %}
         <div>
-            <h3><p>Title: {{ task.title|linebreaksbr }}</p></h3>
-            <p>Type: {{ task.type }}</p>
+            <h3>Title: <a href="{% url 'task_detail' pk=task.pk %}">{{ task.title|linebreaksbr }}</a></h3>
             <p>Status: {{ task.status }}</p>
-            <p>Assignee: {{ task.assignee }}</p>
-            <p>Time spent: {{ task.time_spent }}</p>
-            <p>Description: {{ task.description|linebreaksbr }}</p>
         </div>
+        <hr>
     {% endfor %}
 {% endblock %}
