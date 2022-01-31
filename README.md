@@ -21,21 +21,26 @@
     'USER': <name-user-postgresql>,
     'PASSWORD': <password-postgresql>
     ```
-5. Load data from tasks.
+5. Make migrations and migrate for database.
+    ```
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+6. Load data from tasks.
     ``` 
     python manage.py loaddata tasks/fixture.json
     ```
-6. Load data from users.
+7. Load data from users.
     ``` 
-    python manage.py loaddata users/fixture.json
+    python manage.py loaddata users.json
     ```
 
 [Providing data with fixtures](https://docs.djangoproject.com/en/4.0/howto/initial-data/)
 
 Dump app data to backup file
 > python manage.py dumpdata --format=json tasks > tasks/fixture.json
-> python manage.py dumpdata --format=json users > users/fixture.json
+> python manage.py dumpdata auth > users.json
 
 Load data backup
 > python manage.py loaddata tasks/fixture.json
-> python manage.py loaddata users/fixture.json
+> python manage.py loaddata users.json
