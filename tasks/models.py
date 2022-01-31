@@ -26,5 +26,4 @@ class Information(models.Model):
 
 
     def __str__(self):
-        txt = "Title => {}\n Status = {}"
-        return txt.format(self.title, self.status)
+        return self.title
