@@ -1,25 +1,17 @@
-{% load static %}
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'css/tasks.css'%}"></link>
-</head>
-
-<body>
+{% extends 'tasks/base.html' %}
+{% block content %}
     <div>
         <h1>Lista de tarefas</h1>
     </div>
 
     {% for task in tasks %}
-    <div>
-        <h3><p>Title: {{ task.title|linebreaksbr }}</p></h3>
-        <p>Type: {{ task.type }}</p>
-        <p>Status: {{ task.status }}</p>
-        <p>Assignee: {{ task.assignee }}</p>
-        <p>Time spent: {{ task.time_spent }}</p>
-        <p>Description: {{ task.description|linebreaksbr }}</p>
-    </div>
-
+        <div>
+            <h3><p>Title: {{ task.title|linebreaksbr }}</p></h3>
+            <p>Type: {{ task.type }}</p>
+            <p>Status: {{ task.status }}</p>
+            <p>Assignee: {{ task.assignee }}</p>
+            <p>Time spent: {{ task.time_spent }}</p>
+            <p>Description: {{ task.description|linebreaksbr }}</p>
+        </div>
     {% endfor %}
-</body>
-
-</html>
+{% endblock %}
