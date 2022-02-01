@@ -10,4 +10,6 @@
         <p>Time spent: {{ task.time_spent }}</p>
         <p>Description: {{ task.description|linebreaksbr }}</p>
     </div>
+
+    <a href="{% url 'task-edit' pk=task.pk %}">Editar</a>
 {% endblock %}
