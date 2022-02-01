@@ -5,6 +5,9 @@
 </head>
 
 <body>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'tasks-list' %}">Lista de tarefas</a>
+    <a href="{% url 'task-new' %}">Nova tarefa</a>
     {% block content %}
     {% endblock %}    
 </body>
