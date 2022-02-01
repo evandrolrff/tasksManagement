@@ -20,7 +20,7 @@ class Information(models.Model):
     title = models.CharField(max_length=255)
     type = models.CharField(max_length=255, choices=TYPE_CHOICES)
     status = models.CharField(max_length=255, choices=TYPE_STATUS)
-    assignee = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='assignee')
+    assignee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None , related_name='assignee')
     time_spent = models.DurationField(blank=True)
     description = models.TextField()
 
