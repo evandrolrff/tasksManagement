@@ -11,5 +11,5 @@
         <p>Description: {{ task.description|linebreaksbr }}</p>
     </div>
 
-    <a href="{% url 'task-edit' pk=task.pk %}">Editar</a>
+    <a href="{% url 'task_edit' pk=task.pk %}">Editar</a>
 {% endblock %}

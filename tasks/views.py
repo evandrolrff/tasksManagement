@@ -24,7 +24,7 @@ def task_new(request):
         if form.is_valid():
             task = form.save(commit=False)
             task.save()
-            return redirect('task-detail', pk=task.pk)
+            return redirect('task_detail', pk=task.pk)
     else:
         form = TaskForm()
     return render(request, 'tasks/task_edit.html', {'form': form})
@@ -37,7 +37,7 @@ def task_edit(request, pk):
         if form.is_valid():
             task = form.save(commit=False)
             task.save()
-            return redirect('task-detail', pk=task.pk)
+            return redirect('task_detail', pk=task.pk)
     else:
         form = TaskForm(instance=task)
     return render(request, 'tasks/task_edit.html', {'form': form})
