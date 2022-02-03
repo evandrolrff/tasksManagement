@@ -1,14 +1,19 @@
 {% extends 'tasks/base.html' %}
 {% block content %}
-    <div>
-        <h1>Lista de tarefas</h1>
-    </div>
-
+<div class="container row">
+  <h1>Lista de tarefas</h1>
+</div>
+<div class="container">
+  <div class="list-group">
     {% for task in tasks %}
-        <div>
-            <h3>Title: <a href="{% url 'task_detail' pk=task.pk %}">{{ task.title|linebreaksbr }}</a></h3>
-            <p>Status: {{ task.status }}</p>
-        </div>
-        <hr>
+    <a href="{% url 'task_detail' pk=task.pk %}" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between align-items-start">
+        <h5 class="mb-1">{{ task.title|linebreaksbr }}</h5>
+        <span class="badge bg-primary rounded-pill">14</span>
+      </div>
+      <p class="d-block small opacity-50" style="margin-bottom: 4px;"><b>Descrição:</b> {{ task.description }}</p>
+    </a>
     {% endfor %}
+  </div>
+</div>
 {% endblock %}
