@@ -1,5 +1,11 @@
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
+
+class Publication(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
 
 class Information(models.Model):
     TYPE_CHOICES = [
@@ -23,6 +29,7 @@ class Information(models.Model):
     assignee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None , related_name='assignee')
     time_spent = models.DurationField(blank=True)
     description = models.TextField()
+    discussion = models.ManyToManyField(Publication, blank=True)
 
 
     def __str__(self):
