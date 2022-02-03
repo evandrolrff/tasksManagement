@@ -1,15 +1,19 @@
 {% extends 'tasks/base.html' %}
 
 {% block content %}
-    <div>
-        <h2>Title: {{ task.title }}</h2>
-        <p>Author: {{ task.author }}</p>
-        <p>Assignee: {{ task.assignee }}</p>
-        <p>Type: {{ task.type }}</p>
-        <p>Status: {{ task.status }}</p>
-        <p>Time spent: {{ task.time_spent }}</p>
-        <p>Description: {{ task.description|linebreaksbr }}</p>
+<div class="container">
+    <div style=" margin-top: 20px; margin-bottom: 20px;">
+        <h2>Título: {{ task.title }}</h2>
+        <ul>
+            <li>Autor: {{ task.author }}</li>
+            <li>Assignee: {{ task.assignee }}</li>
+            <li>Tipo: {{ task.type }}</li>
+            <li>Status: {{ task.status }}</li>
+            <li>Time gasto: {{ task.time_spent }}</li>
+            <li>Descrição: {{ task.description|linebreaksbr }}</li>
+        </ul>
     </div>
 
-    <a href="{% url 'task_edit' pk=task.pk %}">Editar</a>
+    <a href="{% url 'task_edit' pk=task.pk %}"><button type="button" class="btn btn-warning">Editar</button></a>
+</div>
 {% endblock %}

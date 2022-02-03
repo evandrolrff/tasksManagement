@@ -10,34 +10,34 @@ class TaskForm(ModelForm):
         fields = ('author', 'title', 'type', 'status', 'assignee', 'time_spent', 'description',)
         widgets = {
             'author': Select(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;'
+                'class': "form-select",
+                'style': '',
                 }, choices=User.objects.all()),
             'title': TextInput(attrs={
                 'class': "form-control",
-                'style': 'max-width: 300px;',
+                'style': '',
                 'placeholder': 'Title'
                 }),
             'type': Select(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;'
+                'class': "form-select",
+                'style': ''
                 }, choices=Information.TYPE_CHOICES),
             'status': Select(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;'
+                'class': "form-select",
+                'style': ''
                 }, choices=Information.TYPE_STATUS),
             'assignee': Select(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;'
+                'class': "form-select",
+                'style': ''
                 }, choices=User.objects.all()),
             'time_spent': TimeInput(attrs={
                 'class': "form-control",
-                'style': 'max-width: 300px; width: 60px;',
+                'style': 'max-width: 100px;',
                 'placeholder': "HH:mm"
                 }),
             'description': Textarea(attrs={
                 'class': "form-control",
-                'style': 'max-width: 300px;',
+                'style': '',
                 'placeholder': 'Description'
                 })
         }
